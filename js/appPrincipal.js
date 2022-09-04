@@ -4,10 +4,11 @@ function numeroAleatorio(min, max){
 }
 
 console.log(numeroAleatorio(10, 21))
-// Funcion expresada se guarda en una variable dicha funcion, quiere decir que no se pasa arriba la funcion como las declarativas, es decir sigue el orden como una variable normal es decir qu si hay algo por encima de dichos datos lo ejecutara en orden , no como las dunciones declarativas es decir por lo del Hoisting, es decir una funcion expresada no se puede invocar antes que declararla.
-const numAzar = function(min, max){
-    return Math.floor(Math.random() * (max - min) + min)
 
-}
+// funcion de azarFlecha, parentesis donde van nuestros parametros y la flechita, ventajas:atajos, sacar el return y quitando las llaves,ya que lo que esta a la derecha de la flechita va a ser retornada,puedes usar aprentesis por comodidad.
+// cosas malas , que no podemos acceder "this" o "super"
+const azarFlecha = (min,max) =>
+     Math.floor(Math.random() * (max - min) + min)
 
-console.log(numAzar(100,201))
+
+console.log(azarFlecha(1,10))

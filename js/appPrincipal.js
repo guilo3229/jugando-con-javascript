@@ -1,12 +1,13 @@
-const frutas=[]
-// En este caso se podia hacer un for of para que leyese despues del while todo y lo fuese mostrando, es decir el primer promt para el primera fruta y luego rellenaba con mas frutas la constante frutas , posteriormente como se ve y luego el for of las iba leyendo y poniendolas en la consola
-const fruta = prompt ("bienvenido al mercado que tipo de fruta desea?")
-frutas.push(fruta)
-console.log(`compraste:  
-${fruta}`)
-
-while(confirm("¿desea agregar otro elemento al carrito?")){
-    const fruta = prompt("¿Que fruta desea comprar?")
-    frutas.push(fruta)
-    console.log (fruta)
+//  funcion declarativa
+function numeroAleatorio(min, max){
+    return Math.floor(Math.random() * (max - min) + min)
 }
+
+console.log(numeroAleatorio(10, 21))
+// Funcion expresada se guarda en una variable dicha funcion, quiere decir que no se pasa arriba la funcion como las declarativas, es decir sigue el orden como una variable normal es decir qu si hay algo por encima de dichos datos lo ejecutara en orden , no como las dunciones declarativas es decir por lo del Hoisting, es decir una funcion expresada no se puede invocar antes que declararla.
+const numAzar = function(min, max){
+    return Math.floor(Math.random() * (max - min) + min)
+
+}
+
+console.log(numAzar(100,201))

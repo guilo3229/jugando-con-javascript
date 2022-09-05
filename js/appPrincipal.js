@@ -8,10 +8,11 @@ const gato ={
     duerme: true,
     edad: 10,
     enemigos:["agua", "perros"],
-    // dos metodos
-    comer(alimento){
+    // funcion de flecha dentro del objeto
+    comer: (alimento) => {
                     // recordemos primero el objeto y luego la propiedad por eso gato.nombre,pero hay otra manera mas elegente de hacerlo con el famoso this!!
                     // this: Hace referencia al objeto contexto de JavaScript en el cual se está ejecutando el código actual(contexto el scout rodo dentro del gato en este caso)
+                    // con flecha no se puede porque hay un this dentro de la flehca y te sale undefined
         console.log(`
             ${this.nombre} esta comiendo ${alimento}
         `)
@@ -24,5 +25,4 @@ const gato ={
 gato.comer("pez")
 
 
-// // las propiedades no lleban parentesis los metodos setInterval, javascript nos ayuda a saber si es metodo o propiedad escribiendo las primeras letras etc
-// console.log(amigos.push)
+

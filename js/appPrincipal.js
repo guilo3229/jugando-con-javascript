@@ -4,27 +4,23 @@
 // U->Update
 // D->Delete
 const gato ={
-nombre: "valiente",
-duerme: true,
-edad: 10,
-enemigos:["agua", "perros"],
-// Objetos anidados, es decir objetos deontro de objeto dentro de objetos con su spropiedades
-otros:{
-    amigos: ["cobarde", "timido"],
-    favoritos:{
-        comida: {
-            frio: "salmon",
-            caliente: "pollo"
-            
-        }
+    nombre: "valiente",
+    duerme: true,
+    edad: 10,
+    enemigos:["agua", "perros"],
+    // dos metodos
+    comer: function() {
+    console.log("gato comiendo")
+    },
+    comerDos(){
+        console.log("gato comiendoDos")
     }
-
-}
 };
 
-const amigos =["cobarde", "timido"]
 
+// como no es una propiedad "comer" es decir es un metodo colocamos paretesis
+gato.comer()
+gato.comerDos()
 
-
-// Optional chaining (opens new window): El operador de encadenamiento opcional "?"". permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida.
-console.log(gato.otros.favorito?.comida.frio)
+// // las propiedades no lleban parentesis los metodos setInterval, javascript nos ayuda a saber si es emtodo o propiedad escribiendo las primeras letras etc
+// console.log(amigos.push)

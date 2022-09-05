@@ -7,15 +7,24 @@ const gato ={
 nombre: "valiente",
 duerme: true,
 edad: 10,
-enemigos:["agua", "perros"]
+enemigos:["agua", "perros"],
+// Objetos anidados, es decir objetos deontro de objeto dentro de objetos con su spropiedades
+otros:{
+    amigos: ["cobarde", "timido"],
+    favoritos:{
+        comida: {
+            frio: "salmon",
+            caliente: "pollo"
+            
+        }
+    }
 
 }
+};
 
-// comprobar si existe o no la propiedad de un objeto
-// .hasOwnProperty(propname) determina  si un objeto tiene una propiedad con ese nombre. .hasOwnProperty() devuelve true o false si se encuentra la propiedad o no.
-// Parece ser que si es true en un if con una funcion como por ejemplo en este caso hasOwnProperty entra dentro del if si es false no lo realice teer en cuenta esto, es decir esta diciendo que si existe el nombre lo actualiza a flojera
-// recuerda el if siempre en minusculas si no se puede joder y con las demas funciones de serie igual cuidado!!
-if (gato.hasOwnProperty ("nombre")){
-    gato.nombre = "flojera"
-}
-console.log(gato)
+const amigos =["cobarde", "timido"]
+
+
+
+// Optional chaining (opens new window): El operador de encadenamiento opcional "?"". permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea válida.
+console.log(gato.otros.favorito?.comida.frio)

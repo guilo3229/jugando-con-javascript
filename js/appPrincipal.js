@@ -1,14 +1,16 @@
-//  funcion declarativa
-function numeroAleatorio(min, max){
-    return Math.floor(Math.random() * (max - min) + min)
+const frutas = []
+const fruta = prompt('🍒 Feria Market 🍉 ¿qué fruta desea comprar?')
+
+frutas.push(fruta)
+
+while (confirm('¿Desea agregar otro elemento al 🛒?')) {
+    const fruta = prompt('¿qué fruta desea comprar?')
+    frutas.push(fruta)
 }
 
-console.log(numeroAleatorio(10, 21))
-
-// funcion de azarFlecha, parentesis donde van nuestros parametros y la flechita, ventajas:atajos, sacar el return y quitando las llaves,ya que lo que esta a la derecha de la flechita va a ser retornada,puedes usar aprentesis por comodidad.
-// cosas malas , que no podemos acceder "this" o "super"
-const azarFlecha = (min,max) =>
-     Math.floor(Math.random() * (max - min) + min)
-
-
-console.log(azarFlecha(1,10))
+console.log('Ustede compró: ')
+// for (let fruta of frutas) {
+//     console.log(fruta)
+// }
+// recibe una funcion que va a retomar un elemento, se puede poner el index detro del for each
+frutas.forEach((fruta) => console.log(fruta))

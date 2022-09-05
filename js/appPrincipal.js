@@ -10,7 +10,12 @@ const gato ={
     enemigos:["agua", "perros"],
     // dos metodos
     comer(alimento){
-        console.log("gato comiendo: " + alimento)
+                    // recordemos primero el objeto y luego la propiedad por eso gato.nombre,pero hay otra manera mas elegente de hacerlo con el famoso this!!
+                    // this: Hace referencia al objeto contexto de JavaScript en el cual se está ejecutando el código actual(contexto el scout rodo dentro del gato en este caso)
+        console.log(`
+            ${this.nombre} esta comiendo ${alimento}
+        `)
+        
     }
 };
 

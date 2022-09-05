@@ -9,18 +9,15 @@ const gato ={
     edad: 10,
     enemigos:["agua", "perros"],
     // dos metodos
-    comer: function() {
-    console.log("gato comiendo")
-    },
-    comerDos(){
-        console.log("gato comiendoDos")
+    comer(alimento){
+        console.log("gato comiendo: " + alimento)
     }
 };
 
 
-// como no es una propiedad "comer" es decir es un metodo colocamos paretesis
-gato.comer()
-gato.comerDos()
+// tener en cuenta que si ponemos string siempre entre corchetes y si no es es strin osea numero tal cual sin corchetes es una variable sin mas
+gato.comer("pez")
 
-// // las propiedades no lleban parentesis los metodos setInterval, javascript nos ayuda a saber si es emtodo o propiedad escribiendo las primeras letras etc
+
+// // las propiedades no lleban parentesis los metodos setInterval, javascript nos ayuda a saber si es metodo o propiedad escribiendo las primeras letras etc
 // console.log(amigos.push)

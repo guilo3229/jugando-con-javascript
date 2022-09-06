@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugando con DOM</title>
-    <script src =" js/appPrincipal.js" defer></script>
-<!-- otra alternativa es ponerle despues del archivo en el scrypt "defer" y sigue funcionando, esto hace que el script se va ejecutando en segundo plano, puede tener problemas porque es relativamente nuevo y algunos navegadores no tinen o no saben como interpretarlo bien, mejor alternativa dejarlo al final del body-->
+    
+
 </head>
 <body>
 
-    <h1 id="tituloWeb">Lorem, ipsum dolor.</h1>
-   
- 
+    <h1 id="tituloWeb" class ="text-primary">Lorem, ipsum dolor.</h1>
+    <div class="container">
+        <p class="text-danger">Lorem, ipsum dolor. 1</p>
+        <p class="text-danger">Lorem, ipsum dolor. 2</p>
+        <p class="text-danger">Lorem, ipsum dolor. 3</p>
+    
+    </div>
+    <p class="text-danger">Esta fuera del container</p>
+    <script src =" js/appPrincipal.js" defer></script>
 </body>
 </html>

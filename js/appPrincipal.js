@@ -7,9 +7,17 @@ const gato ={
     // los get no reciben parametros nada dentro de los parentesis
     get nombreMayuscula(){
         return this.nombre.toUpperCase()
+    },
+    // El set toma un solo parametro y puede modificar los valores que tiene esa propiedad
+    set agregarEnemigo(nuevoEnemigo){
+        this.enemigos.push(nuevoEnemigo)
     }
+    
 }
 
+// para llamar al set es un poco diferente como veremos
+gato.agregarEnemigo = "batman"
+console.log(gato)
 
 console.log(gato.nombreMayuscula)
 

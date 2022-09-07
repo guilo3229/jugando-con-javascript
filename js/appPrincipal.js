@@ -1,15 +1,27 @@
 const lista =document.querySelector("#lista")
 const arrayPaises =["peru","bolivia","colombia"]
-// Es un metodo y por lo tanto lleva parentesis
-const fragment = document.createDocumentFragment()
+const fragment = document.createDocumentFragment();
+{/* <li class="list">
+            <b>Pais:</b>
+            <span class= text-primary">Aqui va elpais</span>        
+</li> */}
 
-arrayPaises.forEach((pais)=>{
-    const newNode =document.createElement("li")
-    newNode.textContent = pais
+arrayPaises.forEach((pais) =>{
+
+    const li = document.createElement("li")
+    li.className = "lista"
     
-    const referenceNode =fragment.firstChild
-    fragment.insertBefore(newNode,referenceNode)
+    const b = document.createElement("b")
+    b.textContent = "pais: "
+    
+    const span = document.createElement("span")
+    span.className= "text-primary"
+    span.textContent =pais
+
+    li.appendChild(b)
+    li.appendChild(span)
+    fragment.appendChild(li)
+
 })
 
 lista.appendChild(fragment)
-// Se podra  hacer que la lista se lea de final ahacia atras?? si con insert Before

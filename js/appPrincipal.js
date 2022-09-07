@@ -1,7 +1,14 @@
-
-
-
-// este es con element BYID
-    console.log(document.getElementById("tituloWeb"))
-// este es con query selector, el query selecto coje por defecto el primero que esta definido para poder coger todos los definidos con dicho nombre hay que añadirle un All al final de querySlector!!, para seleccionar solo lo que este dentro del container hay que especificar .el nodo especifico(sino lo tiene le creamos una clase en HTML) osea donde estan metido lo que queremos sacar, sirve para ambos tanto para el sin All como con el sin All
-    console.log(document.querySelectorAll(".container .text-danger"))
+// muchas veces los elmentos los guardabmos en una variable
+const h1 = document.getElementById("tituloWeb")
+// hacemos una constante del elemento para tener mas facilidad a la hora de trabajar con el
+console.log(h1.id)
+console.log(h1.style)
+console.log(h1.tagName)
+console.log(h1.textContent)
+// todas son propiedades ya que no tienen corchetes
+// tambien se puede modificar la propiedad del elemento, le ponen el antes del nombre
+h1.textContent = "nuevo text desde js"
+// modificando todo atraves de javascript
+h1.style.backgroundColor = "red"
+h1.style.color = "white"
+un beneficio de capturarlo en una variable es que podemos modificar los elementos de manera facil.

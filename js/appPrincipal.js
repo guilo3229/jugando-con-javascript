@@ -1,12 +1,14 @@
 const lista =document.querySelector("#lista")
-// En el caso de abajo hemos puesto un li, pero podemos poner un package, una etiqueta a h1...li. etc
-const li =document.createElement("li")
-li.textContent = "elemento desde js"
-console.log(li)
-// ahora que ya esta la consola tenemos que empujarlo a nuestro DOM HTML
-// ahora identificado el nodo PannerNode(el ID)
-lista.appendChild(li)
-// Si el child hace una referencia a un nodo existente en el documento, el método appendChild se mueve de su posición actual a su nueva posición.
-// Ésto significa que el nodo no puede estar en dos puntos del documento de manera simultánea.
-// Así que si el nodo ya contiene un padre, primero es eliminado, y después se añade a la nueva posición.
-// Se puede usar Node.cloneNode (opens new window)para hacer una copia del nodo antes de añadirlo debajo de su nuevo elemento padre.
+const arrayPaises =["peru","bolivia","colombia"]
+// En este caso si se puede , se esta repitiendo el ciclo pero es una array
+// arrayPaises.forEach(pais=>{
+//     const li =document.createElement("li")
+//     li.textContent = pais
+//     lista.appendChild(li)
+// })
+
+// si no le pones un + antes del igual sobreescribe uno a uno en este caso
+arrayPaises.forEach((pais) =>{
+    lista.innerHTML += `<li>${pais}</li>`
+})
+// mucho cuidado porque con el innerHTML se crea un Reflow y hace que puede haber errores y hace que vaya mas lento y tiene problemas de seguridad y lo puede meterle codigo maliciosos

@@ -3,10 +3,12 @@ const arrayPaises =["peru","bolivia","colombia"]
 // Es un metodo y por lo tanto lleva parentesis
 const fragment = document.createDocumentFragment()
 
-arrayPaises.forEach(pais=>{
-    const li =document.createElement("li")
-    li.textContent = pais
-    fragment.appendChild(li)
+arrayPaises.forEach((pais)=>{
+    const newNode =document.createElement("li")
+    newNode.textContent = pais
+    
+    const referenceNode =fragment.firstChild
+    fragment.insertBefore(newNode,referenceNode)
 })
 
 lista.appendChild(fragment)

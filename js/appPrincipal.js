@@ -1,20 +1,9 @@
-const inputColor = document.querySelector("#inputColor")
-const btnVisualizar = document.querySelector("#btnVisualizar")
-const parrafoExa = document.querySelector("#parrafoExa")
-const cardColor = document.querySelector("#cardColor")
-
-// console.log(inputColor)
-// console.log(btnVisualizar)
-// console.log(parrafoExa)
-// console.log(cardColor)
-
-btnVisualizar.addEventListener("click", ()=>{
-    console.log("me diste click")
-    // como es un InputDeviceInfo,tenemos una propiedad y la llamamos
-    console.log(inputColor.value)
-    // una vez que tenemos ese color vemos como interferir en esos elementos del HTML
-    parrafoExa.textContent= inputColor.value
-    
-    cardColor.style.backgroundColor = inputColor.value
-    
-})
+const lista =document.querySelector("#lista")
+// En el caso de abajo hemos puesto un li, pero podemos poner un package, una etiqueta a h1...li. etc
+const li =document.createElement("li")
+li.textContent = "elemento desde js"
+console.log(li)
+// ahora que ya esta la consola tenemos que empujarlo a nuestro DOM HTML
+// ahora identificado el nodo PannerNode(el ID)
+lista.appendChild(li)
+lista.appendChild(li)

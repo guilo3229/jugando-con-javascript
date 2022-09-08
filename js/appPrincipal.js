@@ -1,29 +1,10 @@
 const lista =document.querySelector("#lista")
-const arrayPaises =["peru","bolivia","colombia"]
-const fragment = document.createDocumentFragment();
-// Lo hacemos como un template para que de vueltas y luego lo listamos con el comando HTML
-let template = ""
-arrayPaises.forEach((pais) =>{
-    template += `
-    <li class="list">
-    <b> Pais:</b>
-    <span class="text-primary">${pais}</span>        
-</li>`;
-
-    // const li = document.createElement("li")
-    // li.className = "lista"
-    
-    // const b = document.createElement("b")
-    // b.textContent = "pais: "
-    
-    // const span = document.createElement("span")
-    // span.className= "text-primary"
-    // span.textContent =pais
-
-    // li.appendChild(b)
-    // li.appendChild(span)
-    // fragment.appendChild(li)
-
-})   
-s
-lista.innerHTML = template
+// const arrayPaises =["peru","bolivia","colombia"]
+// const fragment = document.createDocumentFragment();
+// vale aqui lo que hace, vemos el template que tiene ya un document, sacamos el query slector y luego clonamos dicho contenido y le ponemos true
+const liTemplate = document.querySelector('#liTemplate')
+const clone = liTemplate.content.cloneNode(true)
+// despues de colonarlo nos metemos dentro del objeto y modificamos la clase del span metiendonos dentro y poniendo textcontent para modificar dicho text
+clone.querySelector(".text-primary").textContent = "agregue a atraves de un template"
+// para finalizar mostramos todo el clone con el anterior texto modificado
+console.log(clone)

@@ -62,14 +62,8 @@
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
 
-const users = [
-    { name: "John", age: 34 },
-    { name: "Amy", age: 20 },
-    { name: "camperCat", age: 10 },
-];
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// una collecion de usuarios qu dentro tiene objetos, con el map podremos  devolver los solo los nombres de los usuarios
-// En todos estos metodos usaremos normalmente la funcion de flecha ponemos user o item da igual proque esta en el scop, map crea un array sin referencia y como la funcion de flecha lee cada variable que esta dentro y te retorna el nombre o la propiedad ene ste caso puedeser el nombre o la edad es decir la propeidad que quieras y crea un array con esa propiedad de cada objeto.
-const names = users.map((user) => user.name)
+const numerosPorDos =numeros.map((num)=>num*2)
 
-console.log(names)
+console.log(numerosPorDos)

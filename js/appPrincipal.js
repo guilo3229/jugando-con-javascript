@@ -62,14 +62,14 @@
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
 
-const frutas = ["🍌", "🍏", "🍓"];
-// el map nos devolvia un nuevo array podemos usar function o funciones de flecha que tanto usamos: escribimos item a los parametros, va a ser representado enc ada vuelta por cada uno de los elementos del array frutas, siempre en el map hay que retornar algo de alli el return item y se forma un nuevoArray con cada uno de los elementos, si el return esta en una misma linea quiteamos el item o la variable y lo dejamos entre parentesis,recuerda el scoope aqui:
-const nuevoArray = frutas.map((fruta) =>  fruta);
+const users = [
+    { name: "John", age: 34 },
+    { name: "Amy", age: 20 },
+    { name: "camperCat", age: 10 },
+];
 
-frutas.push("🍉")
-console.log(nuevoArray);
-// diferencia entre el map y esto porque aprece el mismo, cuando se modifique la copia Array se modificara el valor de frutas
-// const copiaArray = frutas
-// frutas.push("🍉")
-// // si modifico frutas el array la copiaarray tambien se le agrega la sandia, por referencia
-// console.log(copiaArray)
+// una collecion de usuarios qu dentro tiene objetos, con el map podremos  devolver los solo los nombres de los usuarios
+// En todos estos metodos usaremos normalmente la funcion de flecha ponemos user o item da igual proque esta en el scop, map crea un array sin referencia y como la funcion de flecha lee cada variable que esta dentro y te retorna el nombre o la propiedad ene ste caso puedeser el nombre o la edad es decir la propeidad que quieras y crea un array con esa propiedad de cada objeto.
+const names = users.map((user) => user.name)
+
+console.log(names)

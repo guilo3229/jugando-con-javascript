@@ -62,7 +62,7 @@
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
 
-// Comando "filter":El método filter() crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada.
+// find devuelve el valor del primer elmento del array que cumple la funcion de prueba proporcionada
 
 const users = [
     { uid: 1, name: "John", age: 34 },
@@ -70,10 +70,8 @@ const users = [
     { uid: 3, name: "camperCat", age: 10 },
 ];
 
-const mayor = users.filter((user) => user.age>30)
-
-console.log(mayor)
-// Aqui en user uid 3 quiere ser eliminado de la lista del array puslando por ejemplo un botoncito y voy acabar con un array sin el uid 3, en este caso es estatico pero puede ser dimnamico
-const userFiltrado = users.filter((user)=> user.uid !== 3)
-
-console.log(userFiltrado)
+// Aparte de funciones de flecha se puede usar una funcion tradicional pero las funciones de flecha nos facilitan la vida por tiempo a la hora de escribir codigo
+// Me devolvio un objeto(el primer!!! objeto que cumple dicha condicion) no un array
+const {age} = users.find((buscador)=>buscador.uid === 2)
+// podemos usar el destructuring, que quiere decir? pues en este caso que solo nos da las propiedades del primer objeto que nos aparece, podemos ademas de decir que objeto es la propiedad especifica de este objeto de eso se trate el destructuring, para ello podemos  especificar en la constante la propiedad que queremos dentrode esta constante entre llavecitas, es decir sera una constante que sera una propiedad de dicho valor, por lo tanto buscara dicha propiedad dentro de esa constante que sera un objeto en este caso, si no ponemos una propiedad que exista nos saldra undefineds ,si lo dejamos entre parentesis no tendra cavida el destructuring seria como una constante  mas que en este caso sera un objeto con todas sus propeidades mostradas, si despues de los 3 = de la funcion flecha ponemos un uid que no existe nos dara error en la consolo
+console.log(age)

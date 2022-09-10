@@ -72,8 +72,8 @@ const users = [
 
 // Aparte de funciones de flecha se puede usar una funcion tradicional pero las funciones de flecha nos facilitan la vida por tiempo a la hora de escribir codigo
 
-// Respecto a Filter queremos saber  si al menos el objeto existe antes de que nos de error usando el find con un id que no existe usaremos el "some"
-// some (: El método some() comprueba si al menos un elemento del array cumple con la condición implementada por la función proporcionada. aca tendremos un verdadero o falso
-const existe =users.some((item) => item.uid === 4)
-// Esto sirve oara saber si existe el elemento u objeto y si existe poder posteriormente traerlo o modificarlo en caso de ser true
-console.log(existe)
+// Respecto a findIndex devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. En caso contrario devuelve -1. Si nos devuelve un -1 no existe
+
+const indice = users.findIndex((user)=> user.name== "John")
+// De esta manera dentro del array users me traigo el users 2 por que? porque indice adquiere el valor de uid que en este caso es 2 y de esta manera podemos invocarlo directamente con todas las propiedades dicho objeto, lo invocamos por referencia, si lo hubiesemos buscado por nombre tambien funciona es decir busca el objeto dentro del array con esa propiedad y nos muestra dicho objeto del array como es logico, pero solo el primer objeto con esa propiedad !!
+console.log(users[indice])

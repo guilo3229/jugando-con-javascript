@@ -69,7 +69,10 @@ const arrayNumeros = [
     [2, 3],
     [4, 5],
 ];
-// otra forma es usando spread syntax con concat, en esta aprte supongo que  al ser un array con arrays mi constante hace una vision de lo que hay dentro de si mismo y lo pone en una sola linea como si fuera un solo array no un arrays con otros 3 arrays.
-const arrayPlano =[].concat(...arrayNumeros)
 
+// El otro metodo es el flat
+const arrayPlano = arrayNumeros.flat()
+// Lo unico que el flat es relativamente nuevo no es muy recomendable utilizarlo.
+// El método flat() crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad especificada.
+// Si dentro de un array hay otros arrays en diferentes niveles podemos pedirle al flat que nos saque el valor en una sola array como resultado de ese nivel es decir si hay un array dentro de un array dentro de un array consideraremos 3 niveles y si queremos solo los valores del nivel 2 ponemos 2,si queremos del 3 solo el numero 3 y si queremos de todo no ponemos nada o nivel 1
 console.log(arrayPlano)

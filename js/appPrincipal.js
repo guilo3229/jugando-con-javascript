@@ -62,18 +62,11 @@
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
 
-// find devuelve el valor del primer elmento del array que cumple la funcion de prueba proporcionada
 
-const users = [
-    { uid: 1, name: "John", age: 34 },
-    { uid: 2, name: "Amy", age: 20 },
-    { uid: 3, name: "camperCat", age: 10 },
-];
 
-// Aparte de funciones de flecha se puede usar una funcion tradicional pero las funciones de flecha nos facilitan la vida por tiempo a la hora de escribir codigo
+// slice (opens new window): El método slice() devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificará.
 
-// Respecto a findIndex devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. En caso contrario devuelve -1. Si nos devuelve un -1 no existe
+const arr =["Cat", "Dog", "Tiger", "Zebra"]
 
-const indice = users.findIndex((user)=> user.name== "John")
-// De esta manera dentro del array users me traigo el users 2 por que? porque indice adquiere el valor de uid que en este caso es 2 y de esta manera podemos invocarlo directamente con todas las propiedades dicho objeto, lo invocamos por referencia, si lo hubiesemos buscado por nombre tambien funciona es decir busca el objeto dentro del array con esa propiedad y nos muestra dicho objeto del array como es logico, pero solo el primer objeto con esa propiedad !!
-console.log(users[indice])
+const array2 = arr.slice(1,3)
+console.log(array2)

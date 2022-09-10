@@ -64,11 +64,10 @@
 
 
 
-// concat
-// concat : El método concat() se usa para unir dos o más arrays. Este método no cambia los arrays existentes, sino que devuelve un nuevo array.
+// "Spread syntax": permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde son esperados..
 
 const array1 =["a","b","c"]
 const array2 =["d","e","f"]
 // ahora hay algo nuevo que es spreadsyntax que es mas usado
-const array3 = array2.concat(array1)
+const array3 = [...array1,...array2]
 console.log(array3)

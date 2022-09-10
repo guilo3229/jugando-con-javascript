@@ -71,7 +71,9 @@ const users = [
 ];
 
 // Aparte de funciones de flecha se puede usar una funcion tradicional pero las funciones de flecha nos facilitan la vida por tiempo a la hora de escribir codigo
-// Me devolvio un objeto(el primer!!! objeto que cumple dicha condicion) no un array
-const {age} = users.find((buscador)=>buscador.uid === 2)
-// podemos usar el destructuring, que quiere decir? pues en este caso que solo nos da las propiedades del primer objeto que nos aparece, podemos ademas de decir que objeto es la propiedad especifica de este objeto de eso se trate el destructuring, para ello podemos  especificar en la constante la propiedad que queremos dentrode esta constante entre llavecitas, es decir sera una constante que sera una propiedad de dicho valor, por lo tanto buscara dicha propiedad dentro de esa constante que sera un objeto en este caso, si no ponemos una propiedad que exista nos saldra undefineds ,si lo dejamos entre parentesis no tendra cavida el destructuring seria como una constante  mas que en este caso sera un objeto con todas sus propeidades mostradas, si despues de los 3 = de la funcion flecha ponemos un uid que no existe nos dara error en la consolo
-console.log(age)
+
+// Respecto a Filter queremos saber  si al menos el objeto existe antes de que nos de error usando el find con un id que no existe usaremos el "some"
+// some (: El método some() comprueba si al menos un elemento del array cumple con la condición implementada por la función proporcionada. aca tendremos un verdadero o falso
+const existe =users.some((item) => item.uid === 4)
+// Esto sirve oara saber si existe el elemento u objeto y si existe poder posteriormente traerlo o modificarlo en caso de ser true
+console.log(existe)

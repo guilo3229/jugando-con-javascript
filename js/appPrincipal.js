@@ -62,8 +62,18 @@
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
 
-const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Comando "filter":El método filter() crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada.
 
-const numerosPorDos =numeros.map((num)=>num*2)
+const users = [
+    { uid: 1, name: "John", age: 34 },
+    { uid: 2, name: "Amy", age: 20 },
+    { uid: 3, name: "camperCat", age: 10 },
+];
 
-console.log(numerosPorDos)
+const mayor = users.filter((user) => user.age>30)
+
+console.log(mayor)
+// Aqui en user uid 3 quiere ser eliminado de la lista del array puslando por ejemplo un botoncito y voy acabar con un array sin el uid 3, en este caso es estatico pero puede ser dimnamico
+const userFiltrado = users.filter((user)=> user.uid !== 3)
+
+console.log(userFiltrado)

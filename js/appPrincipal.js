@@ -64,9 +64,11 @@
 
 
 
-// slice (opens new window): El método slice() devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificará.
+// concat
+// concat : El método concat() se usa para unir dos o más arrays. Este método no cambia los arrays existentes, sino que devuelve un nuevo array.
 
-const arr =["Cat", "Dog", "Tiger", "Zebra"]
-
-const array2 = arr.slice(1,3)
-console.log(array2)
+const array1 =["a","b","c"]
+const array2 =["d","e","f"]
+// ahora hay algo nuevo que es spreadsyntax que es mas usado
+const array3 = array2.concat(array1)
+console.log(array3)

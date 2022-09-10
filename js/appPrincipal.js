@@ -64,10 +64,10 @@
 
 
 
-// "Spread syntax": permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde son esperados..
+// El valor devuelto de la funcion reductora se asigna al acumulador, cuyo valor se recuerda en cada iteracion de la matriz yield, en ultima instancia, se convierte en el valor final,unico y resultante
 
-const array1 =["a","b","c"]
-const array2 =["d","e","f"]
-// ahora hay algo nuevo que es spreadsyntax que es mas usado
-const array3 = [...array1,...array2]
-console.log(array3)
+const numeros = [1, 2, 3, 4, 5];
+// Como primer argumento recive el acumulador y el current value(elvalor actual, que vamos a hacer en cada una de las vueltas, el acumulador en la primera vuelta no tiene nada acumulado por lo tanto es cero por defecto, por ello vamos a coger el acumulador y le vamos a sumar el valor Actual
+// mirar el video de  "Nicolas con hola mundo"   para aprender mas con reduce ya que tiene un monton de funcionalidades ver video ehh!!
+const sumarTodos = numeros.reduce((acc, valorActual) => acc + valorActual)
+console.log(sumarTodos)

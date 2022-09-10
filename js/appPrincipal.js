@@ -69,11 +69,7 @@ const arrayNumeros = [
     [2, 3],
     [4, 5],
 ];
+// otra forma es usando spread syntax con concat, en esta aprte supongo que  al ser un array con arrays mi constante hace una vision de lo que hay dentro de si mismo y lo pone en una sola linea como si fuera un solo array no un arrays con otros 3 arrays.
+const arrayPlano =[].concat(...arrayNumeros)
 
-const soloNumeros = arrayNumeros.reduce(
-        (acc,current) => acc.concat(current)
-
-
-)
-
-console.log(soloNumeros)
+console.log(arrayPlano)

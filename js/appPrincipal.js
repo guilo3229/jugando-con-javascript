@@ -61,18 +61,12 @@
 
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
+// recivo un string asi y necesito pasarlo a un Array,para eso es el Split
+const cadenaMeses = "jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
+// Dentro del entrecomillado que esta en el parentesis despues del split hay que poner  el separador en este caso seria la coma, pero dependera del casos
+const arrayMeses =cadenaMeses.split(",")
+console.log(arrayMeses)
+// y para pasar de un array a un string es decir el Join osea el camino inverso, poniendo un separador que nosostros queramos,en este caso queremos asteriscos
 
-
-// si quisieramos que no esten anidados sino que esten en un unico array
-const arrayNumeros = [
-    [0, 1],
-    [2, 3],
-    [4, 5],
-];
-
-// El otro metodo es el flat
-const arrayPlano = arrayNumeros.flat()
-// Lo unico que el flat es relativamente nuevo no es muy recomendable utilizarlo.
-// El método flat() crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad especificada.
-// Si dentro de un array hay otros arrays en diferentes niveles podemos pedirle al flat que nos saque el valor en una sola array como resultado de ese nivel es decir si hay un array dentro de un array dentro de un array consideraremos 3 niveles y si queremos solo los valores del nivel 2 ponemos 2,si queremos del 3 solo el numero 3 y si queremos de todo no ponemos nada o nivel 1
-console.log(arrayPlano)
+const nuevoTexto = arrayMeses.join("*")
+console.log(nuevoTexto)

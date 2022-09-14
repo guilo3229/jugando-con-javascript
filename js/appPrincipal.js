@@ -74,13 +74,23 @@
 
 // como en el anterior estvamos haciendo con queryselector 1 a 1 no era optimo y ahora cogeremos todos con queryselectorAll que tengan la propeidad o clase border
 
-const cajitas = document.querySelectorAll(".border")
+// const cajitas = document.querySelectorAll(".border")
 
-// esto nos dara un array de esa constante cajitas ojo!! de esta manera podremos usar un for each para interactuar con todas las cajas y darles un mismo eventListerner a todas a la vez
-// cuando nosotros queremos detener dicha propagacion podemos usar la e que es el evento se le pasa a la funcion de flecha y loe añadimos dentro de la funcion de flecha e.StopPropagation() con esto le deciamos que no haga ni la fase de captura ni burbujeo y no se propaga
-cajitas.forEach(caja =>{
-    caja.addEventListener("click",(e)=>{
-        e.stopPropagation()
-        console.log("me diste click")
-    })
+// // esto nos dara un array de esa constante cajitas ojo!! de esta manera podremos usar un for each para interactuar con todas las cajas y darles un mismo eventListerner a todas a la vez
+// // cuando nosotros queremos detener dicha propagacion podemos usar la e que es el evento se le pasa a la funcion de flecha y loe añadimos dentro de la funcion de flecha e.StopPropagation() con esto le deciamos que no haga ni la fase de captura ni burbujeo y no se propaga
+// cajitas.forEach(caja =>{
+//     caja.addEventListener("click",(e)=>{
+//         e.stopPropagation()
+//         console.log("me diste click")
+//     })
+// })
+
+
+const formulario =document.querySelector("form")
+// el navegador manda el submit a traves del let, para ello hay que hacer el prevent default
+formulario.addEventListener("submit", (e) =>{
+    
+    console.log("Me diste click")
+    // evita que las cosas que tienen por defecto los navegadores los detiene
+    e.preventDefault()
 })

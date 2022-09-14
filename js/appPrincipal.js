@@ -67,18 +67,20 @@
 
 // btnesBotones.forEach((btn)=> btn.addEventListener("click", agregarAlCarrito))
 
-// primero capturamos los elementos
-const padre = document.querySelector(".border-primary")
-const hijo = document.querySelector(".border-secondary")
-const nieto = document.querySelector(".border-danger")
-// luego le agregamos un avento
+
 // del elemento que esta mas anidado se propaga hacia arriba de descendencia a ascendencia, se llama burbujeo, se puede hacer al reves del elemento apdre al hijo,para esto ultimo le metemos un true despues del corchete y seria al reves osea si clickamos en el nieto nos saldria primero me diste click padre, hijo y abajo el nieto.
-padre.addEventListener("click",() =>{
-    console.log("me diste click padre")
-},true)
-hijo.addEventListener("click",() =>{
-    console.log("me diste click hijo")
-},true)
-nieto.addEventListener("click",() =>{
-    console.log("me diste click nieto")
-},true)
+
+// Para elvitarlos usamos:stopPropagation : evita la propagación adicional del evento actual en las fases de captura y bubbling.
+
+// como en el anterior estvamos haciendo con queryselector 1 a 1 no era optimo y ahora cogeremos todos con queryselectorAll que tengan la propeidad o clase border
+
+const cajitas = document.querySelectorAll(".border")
+
+// esto nos dara un array de esa constante cajitas ojo!! de esta manera podremos usar un for each para interactuar con todas las cajas y darles un mismo eventListerner a todas a la vez
+// cuando nosotros queremos detener dicha propagacion podemos usar la e que es el evento se le pasa a la funcion de flecha y loe añadimos dentro de la funcion de flecha e.StopPropagation() con esto le deciamos que no haga ni la fase de captura ni burbujeo y no se propaga
+cajitas.forEach(caja =>{
+    caja.addEventListener("click",(e)=>{
+        e.stopPropagation()
+        console.log("me diste click")
+    })
+})

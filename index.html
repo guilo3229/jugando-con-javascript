@@ -64,10 +64,29 @@
         </li>
     </template> -->
     
-    <form>
-        <input type="text" name="nombre">
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="container">
+        <div
+          id="padre"
+          class="border border-primary border-5 py-5 m-3"
+          data-div="divPadre"
+        >
+            Lorem, ipsum.
+            <div
+              id="hijo"
+              class="border border-secondary border-5 py-5 m-3"
+              data-div="divHijo"
+            >
+                Lorem, ipsum.
+                <div
+                  id="nieto"
+                  class="border border-danger border-5 py-5 m-3"
+                  data-div="divNieto"
+                >
+                    Lorem, ipsum.
+                </div>
+            </div>
+        </div>
+    </div>
     <script src =" js/appPrincipal.js" defer></script>
 </body>
 </html>

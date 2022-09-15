@@ -86,11 +86,23 @@
 // })
 
 
-const formulario =document.querySelector("form")
-// el navegador manda el submit a traves del let, para ello hay que hacer el prevent default
-formulario.addEventListener("submit", (e) =>{
+// const formulario =document.querySelector("form")
+// // el navegador manda el submit a traves del let, para ello hay que hacer el prevent default
+// formulario.addEventListener("submit", (e) =>{
     
-    console.log("Me diste click")
-    // evita que las cosas que tienen por defecto los navegadores los detiene
-    e.preventDefault()
+//     console.log("Me diste click")
+//     // evita que las cosas que tienen por defecto los navegadores los detiene
+//     e.preventDefault()
+// }) 
+
+// Delegacion de eventos es para no estar colocando addeventlisener al elemento hijo nieto padre 
+
+// to voy a hacer un container porque esta todo, recordar entre parentesis la class con el puntito
+const container =document.querySelector(".container")
+
+container.addEventListener("click", e=>{
+// si le pongo e.target, donde pinche me va a aparecer el elemento, agregamos el id padre y data-div padre y en el hijo y nieto igual
+console.log(e.target.id)
+// con este target lo que queremos es acceder a los elementos en cuestion para ello podemos usar un if
+
 })

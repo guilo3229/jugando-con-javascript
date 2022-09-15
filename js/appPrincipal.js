@@ -102,7 +102,14 @@ const container =document.querySelector(".container")
 
 container.addEventListener("click", e=>{
 // si le pongo e.target, donde pinche me va a aparecer el elemento, agregamos el id padre y data-div padre y en el hijo y nieto igual
-console.log(e.target.id)
-// con este target lo que queremos es acceder a los elementos en cuestion para ello podemos usar un if
-
+// console.log(e.target.id)
+// con este target lo que queremos es acceder a los elementos en cuestion para ello podemos usar un if, delego el elemento y atraves del if ejecuto la accion correspondiente
+    if(e.target.id=== "padre"){
+    console.log("diste click al padre")
+    }
+    // tambien se puede usar matches  ya que:El método matches() comprueba si el Element sería seleccionable por el selector CSS especificado en la cadena; en caso contrario, retorna false.(nos devuelve un true o un false)
+    // console.log(e.target.matches(".border-secondary"))
+    if(e.target.matches(".border-secondary")){
+        console.log("diste click al hijo")
+    }
 })

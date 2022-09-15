@@ -112,4 +112,10 @@ container.addEventListener("click", e=>{
     if(e.target.matches(".border-secondary")){
         console.log("diste click al hijo")
     }
+    // cada vez que vemos un data es que se esta haceiendo algo con javascript
+    // console.log(e.target.dataset.div)
+    if(e.target.dataset.div==="divNieto"){
+console.log("diste click al nieto")
+    }
 })
+// ventajas no hay propagacion de elementos se lo pongo al container y luego especifico y los demas son ignorados, muchos usan todo el document osea todo el DOM

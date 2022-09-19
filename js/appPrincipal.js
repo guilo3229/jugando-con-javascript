@@ -23,6 +23,12 @@ document.addEventListener("click", e =>{
     if(e.target.matches("#carrito .list-group-item .btn-danger")){
         btnDisminuir(e)
     }
+    if(e.target.matches("footer .lead .btn-outline-info")){
+        btnFinalizarCompra()
+    }
+    if(e.target.matches("#ultimo")){
+        btnSeguirComprando()
+    }
 })
     
 
@@ -99,7 +105,7 @@ const pintarCarrito =() =>{
     
 }
 const pintarFooter =() => {
-    console.log("pintar footer")
+    
     footer.textContent=""
 // otra aplicacion del reduce, aparte de hacer la funcion de callback de la suma, tambien le podemos decirle que va a devolver(un array ,un numero o lo que SafeArray, si le decimos 0 nos devuelve un numero)
     const total= carritoObjeto.reduce(
@@ -109,6 +115,7 @@ const pintarFooter =() => {
     // una vez que tenemos el total tenemos que pintarlo, para eso no debemos modificar el tempalte directamente(podemos tener varios template en neustra pagina web y colnes tambien) como siempre clonacion y posterior fragment siempre y  cuando sea un ciclo como anteriormente el forEach para estudiar la constante carrito objeto y al no necesitar hacer ciclos no hace falta usar fragmente en estecaso con el footer se puede usar fragment pero no ahce falta se puede empujar directamente el clone al footer!
     const clone = templateFooter.content.cloneNode(true)
     clone.querySelector("span").textContent = total
+
     footer.appendChild(clone)
 }
 // ahora hay que hacer la funcionaldiad de agregar y de quitar
@@ -152,6 +159,37 @@ const btnDisminuir = (e) => {
     })
     pintarCarrito()
 }
+const btnFinalizarCompra =() =>{
+    const total= carritoObjeto.reduce(
+        (acc, current) => acc + current.cantidad * current.precio, 0
+    )
+    if (total > 0){
+        footer.textContent=" "
+        const clone = footerFinalizar.content.cloneNode(true)
+        clone.querySelector("span").textContent = ("el total es de" + total + "$")
+       
+        clone.querySelector(".btn-outline-info").textContent = "quieres seguir comprando?"
+        footer.appendChild(clone)
+       
+    }
+    
+    // const clone = footer.content.cloneNode(true)
+    
+}
+const btnSeguirComprando =()=> {
 
+    
+    footer.textContent =""
+   
+    const total= carritoObjeto.reduce(
+        (acc, current) => acc + current.cantidad * current.precio, 0
+    )
+   
+    // una vez que tenemos el total tenemos que pintarlo, para eso no debemos modificar el tempalte directamente(podemos tener varios template en neustra pagina web y colnes tambien) como siempre clonacion y posterior fragment siempre y  cuando sea un ciclo como anteriormente el forEach para estudiar la constante carrito objeto y al no necesitar hacer ciclos no hace falta usar fragmente en estecaso con el footer se puede usar fragment pero no ahce falta se puede empujar directamente el clone al footer!
+    const clone = templateFooter.content.cloneNode(true)
+    clone.querySelector("span").textContent = total
+
+    footer.appendChild(clone)
+}
 
 

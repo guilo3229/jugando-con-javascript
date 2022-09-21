@@ -7,9 +7,43 @@
     <title>Jugando con DOM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-</head>
-<body>
-
+    </head>
+    <body>
+        <div class="container">
+            <h1>formularios</h1>
+            <!-- Ene este caso posterior hemos usado novalidate para que no tenga encuentas las validaciones ya que estas las vamos a hacer con javascript -->
+            <form id="formulario" novalidate >
+                <!-- estacosa va a necesitar diferentes atributos,cuando queramos usar el for-data es necesarioel name
+                el autocomplete es para evitar que te autocompelte la frase google y el id debe ser unico aunque posteriormente veremos otras opciones para captar el input -->
+                <input 
+                    class="form-control mb-2"
+                    type="text"
+                    name ="userName"
+                    placeholder="Ingrese nombre"
+                    autocomplete="off"
+                    id="userName"
+                    required
+                    minlength="3"
+                    maxlength="10"
+                    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Solo letras en el nombre"
+                >
+                <!-- requiered obliga a hacer una validacion directamente desde html sin necesidad de javscript,tambien hay otras validaciones como minlenght,maxlencht etc aunque las mas importantes son las validaciones del lado del server-->
+                <input 
+                    class="form-control mb-2"
+                    type="email"
+                    name ="userEmail"
+                    placeholder="Ingrese correo"
+                    autocomplete="off"
+                    id="userEmail"
+                    required
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                    title="Ingresa un correo valido"
+                >
+                    <!-- el submit significa que neustro formulario se va a procesar -->
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
     <script src =" js/appPrincipal.js" defer></script>
-</body>
+    </body>
 </html>

@@ -1,12 +1,12 @@
+// const formulario = document.querySelector("#formulario");
+const formulario = document.getElementById("formulario")
 
+formulario.addEventListener("submit", e=>{
 
-// [ ] Rango de carácteres. Cualquiera de los caracteres del interior de los corchetes.
-// | Establece una alternativa: lo que está a la izquierda o lo que está a la derecha.
-const regExp = /[A-Za-z0-9]/i;
+    // la e es para poder usar el preventDefault que hacia que las acciones por defecto del navegador las desactivara o detiene las funciones por defecto por ejemplo usamos funcion de flecha con e.
+    // no se procesa el formulario por ejemplo
+    e.preventDefault()
 
-
-// const regExpObjeto = new RegExp("bluweb|bluuweb", "i");
-
-
-// busca el u y el e por separado esta encontrando la u y la e con los corchetes
-console.log(regExp.test("*ñ5"))
+    console.log("formulario procesado")
+    // Para detectar lo que escribio el usuario podemos hacer varias ConstantSourceNode, ahora las validaciones
+})

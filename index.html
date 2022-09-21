@@ -28,6 +28,8 @@
                     pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                     title="Solo letras en el nombre"
                 >
+                <!-- d-none hace que no salga, ,posteriormente se lo quitaremos el d-none con javascript cuando no este correcto lo haremos dinámico, se podria haber usado un create Element, un template unico e insertarlo etc etc -->
+                <p class="text-danger mb-2 d-none" id="alertName">texto de error userName</p>
                 <!-- requiered obliga a hacer una validacion directamente desde html sin necesidad de javscript,tambien hay otras validaciones como minlenght,maxlencht etc aunque las mas importantes son las validaciones del lado del server-->
                 <input 
                     class="form-control mb-2"
@@ -40,9 +42,13 @@
                     pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                     title="Ingresa un correo valido"
                 >
+                <p class="text-danger mb-2 d-none" id="alertEmail">texto de error userEmail</p>
                     <!-- el submit significa que neustro formulario se va a procesar -->
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
+            <div class="alert alert-success mb-2 d-none" id="alertSuccess">
+                mensaje enviado con éxito
+            </div>
         </div>
     <script src =" js/appPrincipal.js" defer></script>
     </body>

@@ -56,10 +56,34 @@ const findPostById = (id) =>
     })
 
 
-findPostById(2)
-// El then para sacar la parte posiiva de la promesa y el catch la negativa con su argumento de porque es negativa
-    .then((post) => console.log(post))
-    .catch((e) => console.log(e))
+// findPostById(2)
+// // El then para sacar la parte posiiva de la promesa y el catch la negativa con su argumento de porque es negativa
+//     .then((post) => console.log(post))
+//     .catch((e) => console.log(e))
+// regla de oro soloamentedentro del async puede haber un away, pero dentro del async puede tenerlo o no tenerlo, pero si lo tiene tendra que ser dentro del async, el await y async solamente se puede con promesas, async y away esta optimizado para guardar y ejecutar promesas
+const buscar = async () =>{
 
+    try{
+        // se demora 4s egundos 1 por cada promesa, esta solucion es solo valida si el postdDos depende del postUno y antes de llegar a la console pasa la segunda constante await anidada, pero en javascript tenemos el promiseall por ello vamos a haccer una array de todas las promesas que vamos a hacer, en este caso ejecuta ambas en los 2 segundos y no suma los 2 segundos de la funcion promesa primera y luego de la segunda
+        const resPost = await Promise.all([
+            // Hay que tener cuidado con el PromiseAll siempre y cuando todas las promesas se cumplan sino no te mandara si una si y la otra no, puede ser que te venga bien y te sirva para programar algo
+            findPostById(4),
+            findPostById(2)
+        ])
+        console.log(resPost)
+        // Si queremos especificar alguna parte de los objetos del array se haria:
+        console.group(resPost[0].title, resPost[1].title)
+    // const postUno = await findPostById(1)
+    // const postDos = await findPostById(2)
+    // console.log(postUno.title, postDos.title)
+    } catch (error){
+        console.log(error)
+    } finally{
+        console.log("se ejecuta si o si")
+
+    }
+}
+
+buscar()
 // no espera los 2 segundos porque se ejecuta el temporizardor de arriba pero java sigue
 console.log("fin del codigo")

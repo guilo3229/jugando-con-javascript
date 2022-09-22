@@ -1,4 +1,4 @@
-console.log("funcionando")
+
 
 const posts = [
     {
@@ -41,17 +41,25 @@ const posts = [
 //     })
 
 // }
-const findPostById = (id) => new Promise((resolve,reject) => {
-
-    const post = posts.find((item) => item.id === id)
-    if(post){
+const findPostById = (id) => 
+    new Promise((resolve,reject) => {
+// vamos a simular que se lee de una base de datos muy grande y hacemos que se demore un poco
+    setTimeout(()=>{
+        const post = posts.find((item) => item.id === id)
+        if(post){
         resolve(post)
-    } else { 
+        } else { 
         reject("no se encontro id " +id)
-    }
-})
+        }
+        // esta en milisegundo le metemos 2k que son 2000ms y por lo tanto 2s
+    },2000)
+    })
+
 
 findPostById(2)
 // El then para sacar la parte posiiva de la promesa y el catch la negativa con su argumento de porque es negativa
     .then((post) => console.log(post))
     .catch((e) => console.log(e))
+
+// no espera los 2 segundos porque se ejecuta el temporizardor de arriba pero java sigue
+console.log("fin del codigo")

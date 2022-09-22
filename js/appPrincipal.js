@@ -26,21 +26,30 @@ const posts = [
 ];
 
 // promesa
-const findPostById = (id) => {
+// const findPostById = (id) => {
     
-    const post = posts.find(item=>item.id === id)
-    // En este caso retornamos una nueva promesa con 2 argumentos que le podemos poner el nombre que nos salga del pito,pero que es la 1º ->respuesta satisfactporia y una 2-> negativa
-    return new Promise((resolve,reject) =>{
+//     const post = posts.find(item=>item.id === id)
+//     // En este caso retornamos una nueva promesa con 2 argumentos que le podemos poner el nombre que nos salga del pito,pero que es la 1º ->respuesta satisfactporia y una 2-> negativa
+//     return new Promise((resolve,reject) =>{
 
-        if(post){
-            resolve(post)
-        }else{
-            reject("no se encontro id " + id)
-        }
+//         if(post){
+//             resolve(post)
+//         }else{
+//             reject("no se encontro id " + id)
+//         }
 
-    })
+//     })
 
-}
+// }
+const findPostById = (id) => new Promise((resolve,reject) => {
+
+    const post = posts.find((item) => item.id === id)
+    if(post){
+        resolve(post)
+    } else { 
+        reject("no se encontro id " +id)
+    }
+})
 
 findPostById(2)
 // El then para sacar la parte posiiva de la promesa y el catch la negativa con su argumento de porque es negativa

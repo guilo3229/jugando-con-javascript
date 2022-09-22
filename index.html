@@ -9,47 +9,7 @@
 
     </head>
     <body>
-        <div class="container">
-            <h1>formulario</h1>
-            <!-- Ene este caso posterior hemos usado novalidate para que no tenga encuentas las validaciones ya que estas las vamos a hacer con javascript -->
-            <form id="formulario" novalidate >
-                <!-- estacosa va a necesitar diferentes atributos,cuando queramos usar el for-data es necesarioel name
-                el autocomplete es para evitar que te autocompelte la frase google y el id debe ser unico aunque posteriormente veremos otras opciones para captar el input -->
-                <input 
-                    class="form-control mb-2"
-                    type="text"
-                    name ="userName"
-                    placeholder="Ingrese nombre"
-                    autocomplete="off"
-                    id="userName"
-                    required
-                    minlength="3"
-                    maxlength="10"
-                    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                    title="Solo letras en el nombre"
-                >
-                <!-- d-none hace que no salga, ,posteriormente se lo quitaremos el d-none con javascript cuando no este correcto lo haremos dinámico, se podria haber usado un create Element, un template unico e insertarlo etc etc -->
-                <p class="text-danger mb-2 d-none" id="alertName">texto de error userName</p>
-                <!-- requiered obliga a hacer una validacion directamente desde html sin necesidad de javscript,tambien hay otras validaciones como minlenght,maxlencht etc aunque las mas importantes son las validaciones del lado del server-->
-                <input 
-                    class="form-control mb-2"
-                    type="email"
-                    name ="userEmail"
-                    placeholder="Ingrese correo"
-                    autocomplete="off"
-                    id="userEmail"
-                    required
-                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
-                    title="Ingresa un correo valido"
-                >
-                <p class="text-danger mb-2 d-none" id="alertEmail">texto de error userEmail</p>
-                    <!-- el submit significa que neustro formulario se va a procesar -->
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-            <div class="alert alert-success mb-2 d-none" id="alertSuccess">
-                mensaje enviado con éxito
-            </div>
-        </div>
+        <h1>promesas</h1>
     <script src =" js/appPrincipal.js" defer></script>
     </body>
 </html>

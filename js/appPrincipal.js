@@ -25,33 +25,24 @@ const posts = [
     },
 ];
 
-// callback usa una funcion como argumento de otra funcion
-// Lo que quiero logarar es que cuando ponga 1-2-3 me mande las propiedades del objeto 
-const findPostById = (id, callback) =>{
-    const post = posts.find(item=>item.id ===id)
-    if(post){
-        callback(null,post)
-    }else{
-        callback("no se encontro el post con id " + id)
-
-    }
-   
-
+// promesa
+const findPostById = (id) => {
     
+    const post = posts.find(item=>item.id === id)
+    // En este caso retornamos una nueva promesa con 2 argumentos que le podemos poner el nombre que nos salga del pito,pero que es la 1º ->respuesta satisfactporia y una 2-> negativa
+    return new Promise((resolve,reject) =>{
+
+        if(post){
+            resolve(post)
+        }else{
+            reject("no se encontro id " + id)
+        }
+
+    })
+
 }
-findPostById(2,(err,post) =>{
-    if (err) return console.log(err)
-    
-    console.log(post)
-        findPostById(1,(err,post)=>{
-            if (err) return console.log(err)
-    
-            console.log(post)
-            console.log(post)
-            findPostById(3,(err,post)=>{
-                if (err) return console.log(err)
-    
-             console.log(post)
-         })
-        })
-})
+
+findPostById(2)
+// El then para sacar la parte posiiva de la promesa y el catch la negativa con su argumento de porque es negativa
+    .then((post) => console.log(post))
+    .catch((e) => console.log(e))

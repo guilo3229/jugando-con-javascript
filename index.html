@@ -9,7 +9,38 @@
 
     </head>
     <body>
-        <h1>promesas</h1>
+        <div class="container my-5">
+              <!-- spinener cargando -->
+            <section class ="d-flex d-none" id = "loading">   
+                 <div class="d-flex align-items-center">
+                    <strong >Cargando...</strong>
+                    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                  </div>
+             
+
+            </section>
+            <!-- Vamos a usar el sistema de columnas -->
+            <section class="row" id="card-dinamicas">
+           
+        </section>
+          
+        </div>
+        <template id="template-card">
+            <!-- Ahora realizaremos el template visualizandolo para ver como queda -->
+            <article class="col-12 col-md-6 col-lg-3 mb-3">
+                <div class="card text-center shadow">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-tittle text-primary lead">El nombre del personaje
+
+                        </h5>
+                        <p class="lead text-secondary">Human estatico
+
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </template>
     <script src =" js/appPrincipal.js" defer></script>
     </body>
 </html>

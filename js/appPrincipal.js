@@ -1,29 +1,27 @@
-// Funcion constructora = Plantilla = Class
 
-function persona (nombre){
-    this.nombre = nombre
-
-    this.saludar = function(){
-            // Recuerda lo de la interpolacion 
-        return `${this.nombre} dice hola`
+class Persona {
+    constructor(nombre){
+        this.nombre = nombre
     }
-    // this.saludarIngles = function () {
-    //     return`${this.nombre} says hi!` 
-
-    // }
+    // estoe s para los programadores horientada a objetos, hay que poenrle un getter
+    get getNombre(){
+        return this.nombre
+    }
+    set setNombre(nombre){
+        this.nombre = nombre
+    }
+    saludar(){
+        return `${this.nombre} dice hola`;
+    }
 }
-// Esto es instanciar, creamos nuestra plantilla objeto a trabes de una funcion y le añadimos dinamicamente las variable que queramos a esa plantilla para no tener que ir haciendo los objetos uno a uno y de esta manera es mas sencillo y ahorramos codigo, recordar que no se peuden usar funciones de flecha porque utilizamos this!!!
 
-// Lo de arriba no es un objeto, es cuando lo instanciamos aqui abajo es cuando creamos los objetos
-// Esto es lo que deciamos antes que aunque existan dichas funcionas no quieren decir que este dentro del contructor del objeto
-persona.prototype.saludarIngles =function(){
-    return`${this.nombre} says hi!`
+const juanito = new Persona("juanito")
+// lo sobreescribe y no hay problema porque es un objeto literal, esto para los programadores horientada a objetos es horrible para ellos esta el getter y el setter.
+// juanito.nombre = "pedrito"
+// En este caso los getter y setter no usan n metodos!
+// El setter sirve para cambiar normalmente no se usa mucho pero tambien se puede usar en algunos casos
+juanito.setNombre = "pedrito"
+console.log(juanito.getNombre)
 
-}
-const juanito = new persona("juanito")
-const pedrito = new persona("pedrito")
-
-console.log(juanito)
-console.log(pedrito)
 console.log(juanito.saludar())
-console.log(pedrito.saludarIngles())
+

@@ -21,22 +21,18 @@ class Persona {
 }
 
 class Estudiante extends Persona {
-    // si queremos meter nuestras propiedades dentro de estudiante llamar al nombre edad y a las notas, pero como la asignacion viene desde arriba usamos el super y en este tenemos que poner lo que se va a mantener.
-    // tras el igaul array vacio para decirle otra cosa cuando no se la metemos o se puede modificar esas notas posteriromente.
-    constructor(nombre,edad,notas = []){
-        super(nombre, edad)
-        this.notas = notas 
-    }
+
+// hastag para decir que es privado
+    #notas = []
     set setNotas(nota){
-        this.notas.push(nota)
+
+        this.#notas.push(nota)
     }
     get getNotas(){
-        return this.notas
+        return this.#notas
     }
     // remplaza el funcionamiento del padre, se sobreescribe osea los metodos se sobreescriben, esto se llama polimorfismo, si un metodo en este caso tiene el mismo nomrbe se soobrescribe
-    saludar(){
-        return `${this.nombre} desde persona`;
-    }
+
 }
 
 
@@ -45,14 +41,6 @@ const juanito = new Estudiante("juanito", 25)
 juanito.setNotas = 7
 juanito.setNotas = 5
 juanito.setNotas = 1
-// el getter nunca se llama con parentesis
-console.log(juanito.getNotas)
-// lo sobreescribe y no hay problema porque es un objeto literal, esto para los programadores horientada a objetos es horrible para ellos esta el getter y el setter.
-// juanito.nombre = "pedrito"
-// En este caso los getter y setter no usan n metodos!
-// El setter sirve para cambiar normalmente no se usa mucho pero tambien se puede usar en algunos casos
-// juanito.setNombre = "pedrito"
-// console.log(juanito.getNombre)
-
-// console.log(juanito.saludar())
-
+// getNotas si que funciona pero si ponemos .#notas
+// y tambien si ponemos juanito tambien apareceran en el objeto todas las notas dentro, esto es para que nuestros programas no choquen en el frontend, en el backend es mas importante como medida de seguridad,
+console.log(juanito)

@@ -9,7 +9,69 @@
 
     </head>
     <body>
-    
+        
+        <div class="container my-5">
+            <h1>Estudiantes y profesores</h1>
+            <form id="formulario">
+                <input 
+                class="form-control mb-2"          
+                type="text"
+                value = "Juanito"
+                name="Nombre"
+                placeholder="Ingrese nombre"
+                >
+                <input 
+                class="form-control mb-2"          
+                type="number"
+                value = "25"
+                name="edad"
+                placeholder="Ingrese nombre"
+                >
+                <select class="form-select mb-2" name= "opcion">
+         
+                    <option value="Estudiante" selected>Estudiante</option>
+                    <option value="Profesor">Profesor</option>
+
+                  </select>
+                  <button class="btn btn-primary" type="submit">agregar</button>
+            </form>
+
+            <section class="row mt-3">
+                <div class="col-6" id ="cardsEstudiantes">
+                  
+                    
+                </div>
+
+                <div class="col-6" id ="cardsProfesores">
+
+                </div>
+            </section>
+        </div>
+
+        <template id ="templateEstudiante">
+            <article class="card mb-2">
+                <div class="card-body">
+                    <h5>
+                        <span class="text-primary">Nombre</span>
+                        <span class="badge bg-success">Aprobado</span>
+                    </h5 >
+                    <h6></h6>
+                    <p class="lead">edad</p>
+                    <button class="btn btn-success">Aprobar</button>
+                    <button class="btn btn-danger">Suspender</button>
+                </div>
+            </article>
+        </template>
+        <template id = "templateProfesor">
+            <article class="card mb-2 bg-dark text-white">
+                <div class="card-body">
+                    <h5>nombre</h5>
+                    <h6>Profesor</h6>
+                    <p class="lead">Edad</p>
+                </div>
+            </article>
+
+        </template>
     <script src =" js/appPrincipal.js" defer></script>
     </body>
 </html>

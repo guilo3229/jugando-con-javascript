@@ -1,14 +1,13 @@
+// el localstorage vive en el navegador de neuestro ordenador,de momento siempre el valor va a ser un string no se puede guardar un array la key seria platano y mostraria lo de la derecha en este caso lka imagen platanito(habra otras cosas en el futuro)
+localStorage.setItem("sandia", "🍉")
+localStorage.setItem("platano", "🍌")
+// Aqui usulmente le decimos que si existe que lo pintemos en consola sirve para guardar anteriores keys etc
+if(localStorage.getItem("platano")){
+    const platano = localStorage.getItem("platano")
+    console.log(platano)
+}
+// Para capturarlo es con getItem
 
+// se puede remover el platanito
+// localStorage.removeItem("platano")
 
-
-// De esta manera buscas el archivo con punta y barrita siempre con la extension de su archivo, esto es el export con nombre!!
-// Ademas se puede invocar el export default poniendolo con los demas de un import pero fuera de las llaves
-// Si tenemos esa variable o constante ya en nuestro archivo e importamos una constante con el mismo nombre podemos cambiar dicho nombre para que no haya conflicto para eso usamos el as
-import pintarPlatano, {frutilla as fresa ,Fruta } from "./frutas.js"
-// el export default es cualquier cosa que mandas que no este definido desde donde vienen es decir cualquier cosa que importes aqui con cualquier nombre te exportara el export por default y los renombre
-// import melon from "./frutas.js"
-// console.log(melon)
-pintarPlatano()
-fresa()
-const guinda =new Fruta("🍒")
-console.log (guinda)

@@ -5,19 +5,19 @@ const cardsProfesores = document.querySelector("#cardsProfesores")
 // con los template con el . content
 const templateEstudiante = document.querySelector("#templateEstudiante").content
 const templateProfesor = document.querySelector("#templateProfesor").content
-
+const alert = document.querySelector(".alert")
 const estudiantes =[]
 const profesores = []
 // Por si despues ahcemos mas delegaciones las tenemos todas reunidas en una misma parte en el document!Eesto es bueno para evitar el tema del burbujeo y la captura
 document.addEventListener("click", (e) => {
     
     // Los dos buttn entran aqui tanto el success como el danger
-    if(e.target.dataset.nombre){
+    if(e.target.dataset.uid){
     
         if(e.target.matches(".btn-success")){
             // como tengo una rray de estudiante lo voy a recorrer con punto map para encontrar el susodicho estudiante
             estudiantes.map((item) => {
-                if(item.nombre === e.target.dataset.nombre){
+                if(item.uid === e.target.dataset.uid){
                     item.setEstado = true
                 }
                 console.log(item)
@@ -27,7 +27,7 @@ document.addEventListener("click", (e) => {
         }
         if(e.target.matches(".btn-danger")){
             estudiantes.map((item)=>{
-                if(item.nombre === e.target.dataset.nombre){
+                if(item.uid === e.target.dataset.uid){
                     item.setEstado = false
                 }
                 return item
@@ -43,7 +43,8 @@ class Persona {
         constructor(nombre, edad){
             this.nombre = nombre
             this.edad = edad
-
+            // Con esto asignaremos un uid a cada personas, no es recomendable usarlo en ciclos rapidos porque pueden ser mas rapido que milisegundos y utilzia estos como asignacion, aqui el date,now acaba pasando de uno a otro como string al button y en la propiedad queda como interger, por lo tanto el triple = no funciona hay que dejarlo como doble pero mejor apsarlo a numerico desde el principio
+            this.uid  = `${Date.now()}`
         }
         // El Persona va a tener la capacidad de pintar la informacion en card estudiantes
         static pintarPersonaUI(personas, tipo){
@@ -108,8 +109,8 @@ class Estudiante extends Persona {
         ? "Aprobado"
         : "Suspendido"
         // aqui deberia ir el id envede nomreb porque cuando busque el nombre como este repetido mal
-        clone.querySelector(".btn-success").dataset.nombre = this.nombre
-        clone.querySelector(".btn-danger").dataset.nombre = this.nombre
+        clone.querySelector(".btn-success").dataset.uid = this.uid
+        clone.querySelector(".btn-danger").dataset.uid= this.uid
         return clone
 
     }
@@ -129,11 +130,19 @@ class Profesor extends Persona {
 
 formulario.addEventListener("submit", e => {
     e.preventDefault()
+    // agregamos cada vez que pinchamos para que la alerta se vaya
+    alert.classList.add("d-none")
     // El formData como parametro el id del formulario
     const datos = new FormData(formulario)
     // se puede hacer destructuring, para traerte los valores correspondientes y despues le igualamos una array a poder ser con el mismo numero de variable que traiga para asignarles ese valor
     const[nombre, edad, opcion] = [...datos.values()]
 
+    if(!nombre.trim()||!edad.trim()||!opcion.trim()){
+        // primera validacion  si no se cumple estos o entra dentro y se sale co el return
+        console.log("algun dato en blanco")
+        alert.classList.remove("d-none")
+        return
+    }
     if(opcion === "Estudiante"){
 
         // hacemos una instancia de Estudiante

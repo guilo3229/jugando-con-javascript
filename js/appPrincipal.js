@@ -1,13 +1,28 @@
-// el localstorage vive en el navegador de neuestro ordenador,de momento siempre el valor va a ser un string no se puede guardar un array la key seria platano y mostraria lo de la derecha en este caso lka imagen platanito(habra otras cosas en el futuro)
-localStorage.setItem("sandia", "🍉")
-localStorage.setItem("platano", "🍌")
-// Aqui usulmente le decimos que si existe que lo pintemos en consola sirve para guardar anteriores keys etc
-if(localStorage.getItem("platano")){
-    const platano = localStorage.getItem("platano")
-    console.log(platano)
+
+
+const frutas = [
+    {
+        nombre: "🍌",
+        color: "amarillo",
+    },
+    {
+        nombre: "🍒",
+        color: "rojo",
+
+    },
+    {
+        nombre:"🍏",
+        color: "verde",
+    }
+]
+// Como despues de la key tenemos que meter un string utilizaremos Json.stringify esto convierte un objeto o valor de Javascript en una cadena de texto JSON
+localStorage.setItem("frutas", JSON.stringify(frutas) )
+// aqui viene como un Json entonces hacemos el camino opuesto usando JSON.parse para volverlo a su estado inicial
+
+// Recordar que viene del local Storage si borramos lo anterior despues de un ciclo queda guardado
+
+
+if (localStorage.getItem("frutas")){
+    const frutasDesdeLocal = JSON.parse(localStorage.getItem("frutas"))
+    console.log(frutasDesdeLocal)
 }
-// Para capturarlo es con getItem
-
-// se puede remover el platanito
-// localStorage.removeItem("platano")
-
